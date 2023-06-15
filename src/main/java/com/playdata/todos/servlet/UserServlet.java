@@ -26,7 +26,7 @@ public class UserServlet extends HttpServlet {
         User user = new User(null, username, password, name, null);
         UserDao userDao = new UserDao();
         userDao.insert(user);
-        resp.sendRedirect("/user");
+        resp.sendRedirect("/login"); // 성공하면 login 페이지로 가라
         resp.setStatus(201);
          // sendRedirect :이 페이지 자체를 넘겨버리는 것
   
