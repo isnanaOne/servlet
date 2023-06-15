@@ -29,8 +29,8 @@ public class UserDao {
     public boolean login(String id, String password) {
         List<User> users = new ArrayList<User>();
         Connection conn = new JdbcConnection().getJdbc();
-        String sql = "select id, username, name, create_at" +
-                "from user " +
+        String sql = "select id, username, name, create_at " +
+                "from users " +
                 "where username = ? and password = ?";
 
         try {
