@@ -14,9 +14,11 @@ import java.sql.SQLException;
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager
                         .getConnection(url, username, password);
-            } catch (ClassNotFoundException | SQLException e) {
+            } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
-            }
+            } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 //        System.out.println("연동 성공");
             return conn;
         }
